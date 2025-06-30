@@ -1,0 +1,140 @@
+///
+/// 
+///@author Franklin Klyk
+/// 
+///@email frsbatist@gmail.com
+/// 
+///https://github.com/franklyk   
+/// 
+/// 
+/// /* Basic from page */
+/// 
+/// 
+
+@use "../base/" as *;
+@use "../lib/" as *;
+
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.box {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: repeating-conic-gradient(from var(--a), #01dbc2 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        --a: 0deg
+    }
+    100%{
+        --a: 360deg
+    }
+}
+.box::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: repeating-conic-gradient(from var(--a), #01dbc2 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 20px solid #222;
+    background: #202020;
+}
+form{
+    position: relative;
+    z-index: 1000;
+    h2{
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 20px;
+        margin-top: 60px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+    .inputBox{
+        position: relative;
+        margin-bottom: 40px;
+        width: 240px;
+        span{
+            position: absolute;
+            inset: -2px;
+            &::before{
+                content: '';
+                position: absolute;
+                inset: -2px;
+                background: repeating-conic-gradient(from var(--a), #01dbc2 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+                animation: animate 6s linear infinite;
+                box-shadow: 0 0 0 2px #000;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: #292929;
+            }
+        }
+        &:nth-child(2) span::before{
+            animation-delay: -1.5s;
+        }
+        input{
+            position: relative;
+            z-index: 100000;
+            outline: none;
+            border: none;
+            width: 100%;
+            padding: 8px 14px;
+            background: transparent;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            &::placeholder{
+                color: #fff;
+                opacity: 0.5;
+            }
+        }
+        input[type="submit"]{
+            border-radius: 20px;
+            background: #01dbc2;
+            box-shadow: 0 0 0 4px #01dbc2;
+            width: 100%;
+            font-weight: 500;
+            color: #292929;
+            filter: drop-shadow(0 0 15px #01dbc2);
+        }
+    }
+    .group{
+        position: relative;
+        top: -10px;
+        padding-bottom: 60px;
+        display: flex;
+        justify-content: space-between;
+        a{
+            text-transform: uppercase;
+            color: #fff8;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            font-size: 0.75em;
+            &:nth-child(2),
+            &:hover{
+                color: #01dbc2;
+                filter: drop-shadow(0 0 5px #01dbc2);
+            }
+        }
+    }
+}

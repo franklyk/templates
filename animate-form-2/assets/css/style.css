@@ -1,0 +1,174 @@
+::-webkit-scrollbar {
+  background: #000000;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 1px solid #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: sans-serif;
+}
+
+html, body {
+  width: 100vw;
+}
+
+body {
+  background: #222;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.box {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: repeating-conic-gradient(from var(--a), #01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    --a: 0deg ;
+  }
+  100% {
+    --a: 360deg ;
+  }
+}
+.box::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: repeating-conic-gradient(from var(--a), #01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+  animation: animate 6s linear infinite;
+  animation-delay: -1.5s;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 20px solid #222;
+  background: #202020;
+}
+
+form {
+  position: relative;
+  z-index: 1000;
+}
+form h2 {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+form .inputBox {
+  position: relative;
+  margin-bottom: 40px;
+  width: 240px;
+}
+form .inputBox span {
+  position: absolute;
+  inset: -2px;
+}
+form .inputBox span::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: repeating-conic-gradient(from var(--a), #01dbc2 0%, #01dbc2 10%, transparent 10%, transparent 50%);
+  animation: animate 6s linear infinite;
+  box-shadow: 0 0 0 2px #000;
+}
+form .inputBox span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #292929;
+}
+form .inputBox:nth-child(2) span::before {
+  animation-delay: -1.5s;
+}
+form .inputBox input {
+  position: relative;
+  z-index: 100000;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px 14px;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+form .inputBox input::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
+form .inputBox input[type=submit] {
+  border-radius: 20px;
+  background: #01dbc2;
+  box-shadow: 0 0 0 4px #01dbc2;
+  width: 100%;
+  font-weight: 500;
+  color: #292929;
+  filter: drop-shadow(0 0 15px #01dbc2);
+}
+form .group {
+  position: relative;
+  top: -10px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+form .group a {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5333333333);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-size: 0.75em;
+}
+form .group a:nth-child(2), form .group a:hover {
+  color: #01dbc2;
+  filter: drop-shadow(0 0 5px #01dbc2);
+}
+
+/*# sourceMappingURL=style.css.map */

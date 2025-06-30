@@ -1,0 +1,62 @@
+///
+/// 
+///@author Franklin Klyk
+/// 
+///@email frsbatist@gmail.com
+/// 
+///https://github.com/franklyk   
+/// 
+/// 
+///
+/// 
+
+@use "../lib" as *;
+
+::-webkit-scrollbar{
+	background: $site-color;
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: $site-color;
+	border: 1px solid $site-color;	
+	// border-radius: 10px;
+	&:hover{
+		background: $site-color;
+
+	}
+}
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: sans-serif;
+}
+
+html,body {
+	width: 100vw;
+}
+
+body {
+	background: #222;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	overflow-x: hidden;
+	min-height: 100vh;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+img{
+	max-height: 100%;
+	max-width: 100%;
+}
