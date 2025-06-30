@@ -1,0 +1,69 @@
+///
+/// 
+///@author Franklin Klyk
+/// 
+///@email frsbatist@gmail.com
+/// 
+///https://github.com/franklyk   
+/// 
+/// 
+/// /* Mixins */
+/// 
+/// 
+
+@use "sass:map";
+@use 'breakpoints' as *;
+@use 'vars' as *;
+
+@mixin config($color: null) {
+    @if ($color ==null) {
+        border: 5px solid #000;
+    }
+
+    @else {
+        border: 5px solid $color;
+    }
+}
+
+@mixin xs() {
+    @include breakpoint('<=xsmall') {
+        @content;
+    }
+}
+
+@mixin sm() {
+    @include breakpoint('>xsmall') {
+        @content;
+    }
+}
+
+@mixin md() {
+    @include breakpoint('>small') {
+        @content;
+    }
+}
+
+@mixin lg() {
+    @include breakpoint('>medium') {
+        @content;
+    }
+}
+
+@mixin xl() {
+    @include breakpoint('>large') {
+        @content;
+    }
+}
+
+@mixin xxl() {
+    @include breakpoint('>xlarge') {
+        @content;
+    }
+}
+
+@mixin keyframes($name: null, $direction: null) {
+    @if($direction != null){
+        $direction: $direction;
+    }
+    animation: $name 5s infinite $direction;
+}
