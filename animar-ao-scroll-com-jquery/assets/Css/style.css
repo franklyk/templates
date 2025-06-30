@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    padding-bottom: 300px;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+div{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    color: white;
+    font-size: 10rem;
+}
+header{
+    height: 500px;
+}
+
+.retangulo1{
+    background: #f32592;
+    border: 3px solid black;
+    height: 300px;
+    margin: 150px auto;
+    width: 700px;
+}
+.retangulo2{
+    background: #8526ff;
+    border: 3px solid black;
+    height: 300px;
+    margin: 150px auto;
+    width: 700px;
+}
+.retangulo3{
+    background: #1f3542;
+    border: 3px solid black;
+    height: 300px;
+    margin: 150px auto;
+    width: 700px;
+}
+footer{
+    height: 200px;
+    width: 100%;
+}
+
+.anime{
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+    transition: .5s;
+}
+.anime-start{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}

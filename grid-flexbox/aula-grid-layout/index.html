@@ -1,0 +1,333 @@
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Grid Layout</title>
+</head>
+<body>
+    <h1>display: block</h1>
+    <section class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </section>
+    <h1>grid-template-columns: 200px 200px;</h1>
+    <section class="grid grid-template-columns">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </section>
+    <h1>grid-template-columns: 1fr 2fr 1fr;</h1>
+    <section class="grid grid-template-columns-3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>Subgrid</h1>
+    <section class="grid grid-template-columns-3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item subgrid">
+            <div>5.1</div>
+            <div>5.2</div>
+            <div>5.3</div>
+        </div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-columns: 100px 100px 100px 100px</h1>
+    <section class="grid grid-template-columns-1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </section>
+    <h1>grid-template-columns: 100px 100px 100px 100px</h1>
+    <section class="grid grid-template-columns-2">
+        <div class="item">Palavra Teste</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">PalavraTeste</div>
+    </section>
+    <h1>grid grid-template-columns: 1fr 1fr;</h1>
+    <section class="grid grid-template-columns-2">
+        <div class="item">TesteTestePalavratesteparatestar</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </section>
+    <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+    <section class="grid grid-template-columns-3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+    <section class="grid grid-template-columns-3">
+        <div class="item">TesteTestePalavratesteparatestar</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-columns: minmax(200px, 1fr) 1fr 1fr;</h1>
+    <section class="grid grid-template-columns-3">
+        <div class="item">1</div>
+        <div class="item">TesteTestePalavratesteparatestar</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-columns: 3fr repeat(3, 1fr) 5fr;</h1>
+    <section class="grid grid-template-columns-4">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-columns: repeat(auto-fit, 100px);</h1>
+    <section class="grid grid-template-columns-5">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-columns: repeat(auto-fit, minmax(300px, auto));</h1>
+    <section class="grid grid-template-columns-6">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-columns: repeat(auto-fill, minmax(100px, auto));</h1>
+    <section class="grid grid-template-columns-7">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    <h1>grid-template-rows: 50px 100px 50px 150px;</h1>
+    <section class="grid grid-template-rows-1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+    </section>
+    <h1>grid-template-rows: 100px 100px;</h1>
+    <section class="grid grid-template-rows-2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8adfadfadfasdfasdfas dfadfasdfasdfasdfa sdfasdfasdfa</div>
+    </section>
+    <h1>grid-template-rows: 1fr 2fr 1fr 3fr;</h1>
+    <section class="grid grid-template-rows-3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+    </section>
+    <h1>grid-template-columns / grid-template-rows</h1>
+    <section class="grid grid-template-rows-4">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+    </section>
+    <h1>grid-template-areas</h1>
+    <section class="grid grid-template-areas-1">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content content content content content content content content content content content content content content content content content content content content content content content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+    <h1>grid-template-areas-2</h1>
+    <section class="grid grid-template-areas-2">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+    <h1>grid-template-areas(mobile)</h1>
+    <section class="grid grid-template-areas-3">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+    <h1>grid-template-areas (colunas e linhas)</h1>
+    <section class="grid grid-template-areas-4">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+    <h1>grid-template-areas (. para área vazia)</h1>
+    <section class="grid grid-template-areas-5">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+
+    <h1>grid-template: 50px 1fr / 100px 1fr 100px;</h1>
+    <section class="grid grid-template-1">
+        <div class="item">logo</div>
+        <div class="item">nav</div>
+        <div class="item">content</div>
+        <div class="item">sidenav</div>
+        <div class="item">advert</div>
+        <div class="item">footer</div>
+    </section>
+
+    <h1>grid-template (areas, columns e rows)</h1>
+    <section class="grid grid-template-2">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+    
+    
+    
+    <h1>grid-gap;</h1>
+    <section class="grid grid-template grid-gap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    
+    <h1>grid-column-gap: 20px;</h1>
+    <section class="grid grid-template-2 grid-gap-1">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+    
+    <h1>display: block;</h1>
+    <section class="grid">
+        <div class="item logo">logo</div>
+        <div class="item nav">nav</div>
+        <div class="item content">content</div>
+        <div class="item sidenav">sidenav</div>
+        <div class="item advert">advert</div>
+        <div class="item footer">footer</div>
+    </section>
+    
+    <h1>display: block;</h1>
+    <section class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    
+    <h1>display: block;</h1>
+    <section class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    
+    <h1>display: block;</h1>
+    <section class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    
+    <h1>display: block;</h1>
+    <section class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    
+    <h1>display: block;</h1>
+    <section class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    
+    <h1>display: block;</h1>
+    <section class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+    
+</body>
+</html>
