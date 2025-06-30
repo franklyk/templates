@@ -1,0 +1,482 @@
+///
+/// 
+///@author Franklin Klyk
+/// 
+///@email frsbatist@gmail.com
+/// 
+///https://github.com/franklyk   
+/// 
+/// 
+/// /* Mixins */
+/// 
+/// 
+
+@use "sass:map";
+@use 'breakpoints' as *;
+@use 'vars' as *;
+
+@mixin config($color:null) {
+    border: 1px solid $color;
+}
+
+
+@mixin bkpt($value: null) {
+
+    @if ($value =="xs") {
+        @include breakpoint('<=xsmall') {
+            @content;
+        }
+    }
+
+    @else if ($value =="sm") {
+        @include breakpoint('>xsmall') {
+            @content;
+        }
+    }
+
+    @else if ($value =="md") {
+        @include breakpoint('>small') {
+            @content;
+        }
+    }
+
+    @else if ($value =="lg") {
+        @include breakpoint('>medium') {
+            @content;
+        }
+    }
+
+    @else if ($value =="xl") {
+        @include breakpoint('>large') {
+            @content;
+        }
+    }
+
+    @else if ($value =="xxl") {
+        @include breakpoint('>xlarge') {
+            @content;
+        }
+    }
+}
+
+@mixin element($element: null, $disposition: null) {
+    @if($element !=null) {
+        @if($disposition ==null) {
+            .#{$element} {
+                @content;
+            }
+        }
+
+        @else {
+            .#{$element}-#{$disposition} {
+                @content;
+
+            }
+        }
+    }
+
+}
+
+@mixin fluid(){
+    .container-fluid{
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+@mixin container($disposition: null) {
+    @if($disposition !=null) {
+        .container-#{$disposition} {
+            max-width: map.get($containers, $disposition);
+        }
+    }
+}
+
+@mixin form($form: null) {
+
+    .container-#{$form} {
+        @if ($form =="login") {
+            @include bkpt() {
+                width: 350px;
+            }
+
+            @include bkpt("sm") {
+                width: 400px;
+            }
+
+            @include bkpt("md") {
+                width: 380px;
+            }
+
+            @include bkpt("lg") {
+                width: 450px;
+            }
+
+            // @include bkpt("xl"){
+            //     width: 100%;
+            // }
+            // @include bkpt("xxl"){
+
+            // }
+
+        }
+
+        @else if($form =="new-user") {
+            // @include bkpt(){
+            //     width: 350px;
+            // }
+            // @include bkpt("sm"){
+            //     width: 400px;
+            // }
+            // @include bkpt("md"){
+            //     width: 380px;
+            // }
+            // @include bkpt("lg"){
+            //     width: 450px;
+            // }
+            // @include bkpt("xl"){
+            //     width: 100%;
+            // }
+            // @include bkpt("xxl"){
+
+            // }
+        }
+
+        @else if("recover-password") {
+            // @include bkpt(){
+            //     width: 350px;
+            // }
+            // @include bkpt("sm"){
+            //     width: 400px;
+            // }
+            // @include bkpt("md"){
+            //     width: 380px;
+            // }
+            // @include bkpt("lg"){
+            //     width: 450px;
+            // }
+            // @include bkpt("xl"){
+            //     width: 100%;
+            // }
+            // @include bkpt("xxl"){
+
+            // }
+        }
+
+        @else if("update-password") {
+            // @include bkpt(){
+            //     width: 350px;
+            // }
+            // @include bkpt("sm"){
+            //     width: 400px;
+            // }
+            // @include bkpt("md"){
+            //     width: 380px;
+            // }
+            // @include bkpt("lg"){
+            //     width: 450px;
+            // }
+            // @include bkpt("xl"){
+            //     width: 100%;
+            // }
+            // @include bkpt("xxl"){
+
+            // }
+        }
+
+        @else if("") {
+            // @include bkpt(){
+            //     width: 350px;
+            // }
+            // @include bkpt("sm"){
+            //     width: 400px;
+            // }
+            // @include bkpt("md"){
+            //     width: 380px;
+            // }
+            // @include bkpt("lg"){
+            //     width: 450px;
+            // }
+            // @include bkpt("xl"){
+            //     width: 100%;
+            // }
+            // @include bkpt("xxl"){
+
+            // }
+        }
+
+
+    }
+}
+
+@mixin sm(){
+    @include bkpt(sm){
+        @content;
+    }
+}
+
+@mixin md(){
+    @include bkpt(md){
+        @content;
+    }
+}
+
+@mixin lg(){
+    @include bkpt(lg){
+        @content;
+    }
+}
+
+@mixin xl(){
+    @include bkpt(xl){
+        @content;
+    }
+}
+
+@mixin xxl(){
+    @include bkpt(xxl){
+        @content;
+    }
+}
+
+@mixin col-simple($num: null) {
+
+    @if($num !=null) {
+        $num: $num;
+
+        .col-#{$num} {
+            width: calc((100% / 12) * #{$num});
+        }
+    }
+
+    @else {
+        $num: $num;
+
+        .col {
+            width: calc((100% / 12) * 12);
+        }
+    }
+
+}
+
+@mixin col-disposition($disposition: null, $num: null) {
+    @if($disposition !=null) {
+        @if($num !=null) {
+            $num: $num;
+
+            .col-#{$disposition}-#{$num} {
+                width: calc((100% / 12) * #{$num});
+            }
+
+        }
+
+        @else {
+            @if($num !=null) {
+                $num: $num;
+
+                .col-#{$num} {
+                    width: calc((100% / 12) * #{$num});
+                }
+            }
+
+            @else {
+                $num: $num;
+
+                .col {
+                    width: calc((100% / 12) * 12);
+                }
+            }
+
+        }
+    }
+
+}
+
+@mixin col() {
+
+    @include col-simple();
+    @include col-simple("1");
+    @include col-simple("2");
+    @include col-simple("3");
+    @include col-simple("4");
+    @include col-simple("5");
+    @include col-simple("6");
+    @include col-simple("7");
+    @include col-simple("8");
+    @include col-simple("9");
+    @include col-simple("10");
+    @include col-simple("11");
+    @include col-simple("12");
+
+    @include bkpt('xs') {
+        @include col-disposition("xs", "1");
+        @include col-disposition("xs", "2");
+        @include col-disposition("xs", "3");
+        @include col-disposition("xs", "4");
+        @include col-disposition("xs", "5");
+        @include col-disposition("xs", "6");
+        @include col-disposition("xs", "7");
+        @include col-disposition("xs", "8");
+        @include col-disposition("xs", "9");
+        @include col-disposition("xs", "10");
+        @include col-disposition("xs", "11");
+        @include col-disposition("xs", "12");
+    }
+
+    @include bkpt("sm") {
+        @include col-disposition("sm", "1");
+        @include col-disposition("sm", "2");
+        @include col-disposition("sm", "3");
+        @include col-disposition("sm", "4");
+        @include col-disposition("sm", "5");
+        @include col-disposition("sm", "6");
+        @include col-disposition("sm", "7");
+        @include col-disposition("sm", "8");
+        @include col-disposition("sm", "9");
+        @include col-disposition("sm", "10");
+        @include col-disposition("sm", "11");
+        @include col-disposition("sm", "12");
+    }
+
+    @include bkpt("md") {
+        @include col-disposition("md", "1");
+        @include col-disposition("md", "2");
+        @include col-disposition("md", "3");
+        @include col-disposition("md", "4");
+        @include col-disposition("md", "5");
+        @include col-disposition("md", "6");
+        @include col-disposition("md", "7");
+        @include col-disposition("md", "8");
+        @include col-disposition("md", "9");
+        @include col-disposition("md", "10");
+        @include col-disposition("md", "11");
+        @include col-disposition("md", "12");
+    }
+
+    @include bkpt("lg") {
+        @include col-disposition("lg", "1");
+        @include col-disposition("lg", "2");
+        @include col-disposition("lg", "3");
+        @include col-disposition("lg", "4");
+        @include col-disposition("lg", "5");
+        @include col-disposition("lg", "6");
+        @include col-disposition("lg", "7");
+        @include col-disposition("lg", "8");
+        @include col-disposition("lg", "9");
+        @include col-disposition("lg", "10");
+        @include col-disposition("lg", "11");
+        @include col-disposition("lg", "12");
+    }
+
+
+    @include bkpt("xl") {
+        @include col-disposition("xl", "1");
+        @include col-disposition("xl", "2");
+        @include col-disposition("xl", "3");
+        @include col-disposition("xl", "4");
+        @include col-disposition("xl", "5");
+        @include col-disposition("xl", "6");
+        @include col-disposition("xl", "7");
+        @include col-disposition("xl", "8");
+        @include col-disposition("xl", "9");
+        @include col-disposition("xl", "10");
+        @include col-disposition("xl", "11");
+        @include col-disposition("xl", "12");
+
+    }
+
+    @include bkpt("xxl") {
+        @include col-disposition("xxl", "1");
+        @include col-disposition("xxl", "2");
+        @include col-disposition("xxl", "3");
+        @include col-disposition("xxl", "4");
+        @include col-disposition("xxl", "5");
+        @include col-disposition("xxl", "6");
+        @include col-disposition("xxl", "7");
+        @include col-disposition("xxl", "8");
+        @include col-disposition("xxl", "9");
+        @include col-disposition("xxl", "10");
+        @include col-disposition("xxl", "11");
+        @include col-disposition("xxl", "12");
+    }
+
+}
+
+@mixin row() {
+    .row {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(20px, auto));
+    }
+}
+
+@mixin forms() {
+    form {
+        div {
+
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .form-floating {
+
+            position: relative;
+
+            .form-label {
+                bottom: 5px;
+                left: 15px;
+                position: absolute;
+                transition: .3s ease-in-out;
+            }
+
+            .form-controll:focus~.form-label,
+            .form-controll:valid~.form-label {
+                font-size: 10px;
+                transform: translateY(-30px);
+            }
+        }
+
+        .form-controll {
+            background: transparent;
+            border: $border;
+            border-radius: $radius;
+            font-size: 1.1em;
+            height: 50px;
+            outline-color: #1c689494;
+            transition: .9s ease-in-out;
+            vertical-align: bottom;
+            width: 100%;
+        }
+
+    }
+}
+
+@mixin border($border: null, ) {
+    @if($border !=null) {
+        .border {
+            border: map.get($borders, border, $border);
+        }
+    }
+}
+
+@mixin border-color($stronght: null) {
+    @if($stronght !=null) {
+        .border-#{$stronght} {
+            border: map.get($borders, border, $stronght);
+        }
+    }
+}
+
+@mixin rounded($rounded: null) {
+    @if($rounded !=null) {
+        .rounded-#{$rounded} {
+            border-radius: map.get($borders, rounded, $rounded);
+        }
+    }
+
+    @else {
+        .rouded {
+            border-radius: 6px;
+        }
+    }
+}

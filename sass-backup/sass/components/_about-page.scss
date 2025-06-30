@@ -1,0 +1,32 @@
+///
+/// 
+///@author Franklin Klyk
+/// 
+///@email frsbatist@gmail.com
+/// 
+///https://github.com/franklyk   
+/// 
+/// 
+/// /* Basic from page */
+/// 
+/// 
+
+@use "../base/" as *;
+@use "../lib/" as *;
+
+.about-page {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 80px);
+    justify-content: center;
+
+    .about-page-logo {
+        width: 300px;
+        @include bkpt("md"){
+            width: 600px;
+
+        }
+    }
+
+    
+}

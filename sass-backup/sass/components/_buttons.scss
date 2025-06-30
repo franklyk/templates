@@ -1,0 +1,55 @@
+///
+/// 
+///@author Franklin Klyk
+/// 
+///@email frsbatist@gmail.com
+/// 
+///https://github.com/franklyk   
+/// 
+/// 
+/// /* Basic from page */
+/// 
+/// 
+
+@use "../base/" as *;
+@use "../lib/" as *;
+
+.btn-menu {
+    cursor: pointer;
+    height: 40px;
+    transition: .5s;
+    width: 40px;
+
+    .line {
+        background: white;
+        display: block;
+        height: 1px;
+        // position: relative;
+        transform-origin: center;
+        transition: .5s;
+        width: 40px;
+    }
+
+    &.active {
+        border: 1px solid red;
+        background: #f00;
+        box-shadow: inset 1px 1px 3px 3px #ff000083, 1px 1px 1px 1px red;
+
+        .line-1 {
+            height: 3px;
+            transform: translateY(10px) rotate(135deg);
+        }
+
+        .line-2 {
+            background: transparent;
+            width: 0;
+        }
+
+        .line-3 {
+            height: 3px;
+            transform: translatey(-10px) rotate(-135deg);
+
+        }
+    }
+
+}

@@ -1,0 +1,132 @@
+///
+/// 
+///@author Franklin Klyk
+/// 
+///@email frsbatist@gmail.com
+/// 
+///https://github.com/franklyk   
+/// 
+/// 
+/// /* Basic from page */
+/// 
+/// 
+
+@use "../base/" as *;
+@use "../lib/" as *;
+
+
+.main {
+
+    margin: 30px auto;
+    width: 90%;
+    max-width: 900px !important;
+
+    .section-flag {
+        background: $linear-gradient-main;
+        color: white;
+        font-size: large;
+        margin: 30px auto;
+
+        .title {
+            text-shadow: $text-shadow;
+        }
+
+        .comment {
+            text-shadow: $text-shadow;
+        }
+    }
+
+    .showcase {
+        display: grid;
+        gap: 20px;
+        grid-auto-flow: dense;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 830px;
+
+        &.showcase-1 {
+            grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+
+        }
+
+        &.showcase-2 {
+
+            grid-template-columns: repeat(2, 1fr);
+
+            .group-1 {
+                grid-row: 1 / 3;
+            }
+
+            .group-2 {
+                align-items: center;
+                display: grid;
+                gap: 20px;
+                grid-row: 1 / 3;
+            }
+        }
+
+        .shelf {
+            justify-self: center;
+        }
+    }
+
+    .container-dialog {
+        background: #66dae2;
+        .dialog-box {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            width: 100%;
+
+            .dialog-msg {
+                max-width: 80%;
+                
+            }
+        }
+
+        &.dialog-1 {
+            background-image: url("../../images/banners/galerinha.webp");
+
+            .dialog-box {
+                align-items: center;
+
+                .dialog-msg {
+                    color: white;
+                    font-size: 25px;
+                    text-align: justify;
+                }
+            }
+        }
+
+        &.dialog-2 {
+            background-image: url("../../images/banners/familia.png");
+
+            .dialog-box {
+                align-items: flex-start;
+
+                .dialog-msg {
+                    color: white;
+                    font-size: 30px;
+                    text-align: left;
+                }
+            }
+
+            // .dialog-msg {
+            //     color: blue;
+            //     background: #ffffffa2;
+            // }
+        }
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 400px;
+        margin: 30px auto;
+        width: 100%;
+
+
+
+
+    }
+}
